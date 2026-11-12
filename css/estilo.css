@@ -1,0 +1,601 @@
+/* ==========================================================
+   FORNO & PIZZA — folha de estilos (Entrega 2)
+   Abordagem MOBILE FIRST: os estilos base são para telemóvel
+   e as regras @media (min-width) adaptam para ecrãs maiores.
+   Cores: vermelho #C0392B · vermelho escuro #8E2A20
+          rosa claro #FBE9E7 · amarelo #F1C40F · amarelo claro #FFF4CC
+          castanho escuro #4A1511
+   ========================================================== */
+
+
+/* ===== RESET BÁSICO ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+  color: #222222;
+  background-color: #ffffff;
+}
+
+
+/* ===== IMAGENS RESPONSIVAS ===== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ===== TIPOGRAFIA ===== */
+h1, h2, h3 {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+h1 { font-size: clamp(1.75rem, 5vw, 2.75rem); }
+h2 { font-size: clamp(1.35rem, 3.5vw, 1.9rem); }
+h3 { font-size: clamp(1.05rem, 2.5vw, 1.2rem); }
+
+a {
+  color: inherit;
+}
+
+/* Quando se salta para uma âncora, o cabeçalho fixo não tapa o título */
+section[id], .cartao[id] {
+  scroll-margin-top: 9rem;
+}
+
+
+/* ===== CONTENTOR ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+main {
+  padding-bottom: 1rem;
+}
+
+/* Páginas interiores: espaço entre o cabeçalho e o título */
+.pagina {
+  padding-top: 1.75rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+
+/* ===== BOTÕES ===== */
+.botao {
+  display: inline-block;
+  background-color: #C0392B;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: bold;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+}
+
+.botao:hover {
+  background-color: #8E2A20;
+}
+
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #C0392B;
+  color: #ffffff;
+}
+
+/* Mobile: logótipo por cima e menu por baixo */
+.cabecalho-conteudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.6rem;
+  padding-bottom: 0.6rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.15rem;
+}
+
+.logo-icone {
+  width: 44px;
+  height: 44px;
+  padding: 3px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  object-fit: contain;
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu a {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.menu a:hover,
+.menu a.ativo {
+  background-color: #8E2A20;
+}
+
+
+/* ===== HERO (PÁGINA INICIAL) ===== */
+.hero {
+  background-color: #FBE9E7;
+  margin-bottom: 2rem;
+}
+
+/* Mobile: 1 coluna */
+.hero-grelha {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1.5rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Truque: no mobile a imagem aparece primeiro */
+.hero-imagem {
+  order: -1;
+  width: 70%;
+  max-width: 260px;
+  margin: 0 auto;
+}
+
+.hero-texto {
+  text-align: center;
+}
+
+.hero-texto h1 {
+  color: #8E2A20;
+}
+
+
+/* ===== CARTÕES (DESTAQUES, MENU, VALORES) ===== */
+.grelha-cartoes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cartao {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  padding: 0.75rem;
+  background-color: #ffffff;
+  border: 2px solid #C0392B;
+  border-radius: 8px;
+}
+
+.cartao img {
+  width: 100%;
+  max-width: 130px;
+  margin: 0 auto;
+}
+
+.cartao h3 {
+  margin-bottom: 0;
+}
+
+.descricao {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.preco {
+  margin: 0;
+  color: #C0392B;
+  font-weight: bold;
+}
+
+/* O preço e o botão ficam sempre no fundo do cartão, alinhados */
+.cartao .preco {
+  margin-top: auto;
+}
+
+
+/* ===== DESTAQUE "MONTA A TUA PIZZA" ===== */
+.destaque-monta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #FFF4CC;
+  border: 2px solid #F1C40F;
+  border-radius: 8px;
+}
+
+.destaque-monta h2,
+.destaque-monta p {
+  margin-bottom: 0.25rem;
+}
+
+/* O botão não encolhe, por isso o texto não parte em duas linhas */
+.destaque-monta .botao {
+  flex-shrink: 0;
+}
+
+
+/* ===== PROMOÇÃO DO DIA ===== */
+.promocao {
+  margin-bottom: 2rem;
+  padding: 0.9rem;
+  background-color: #8E2A20;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.promocao p {
+  margin: 0;
+}
+
+
+/* ===== MENU: FILTROS POR CATEGORIA ===== */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filtro {
+  padding: 0.4rem 1rem;
+  color: #C0392B;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #C0392B;
+  border-radius: 999px;
+}
+
+.filtro:hover {
+  background-color: #C0392B;
+  color: #ffffff;
+}
+
+
+/* ===== FORMULÁRIOS (GERAL) ===== */
+label {
+  display: block;
+  margin-top: 0.75rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.6rem;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 2px solid #cccccc;
+  border-radius: 6px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: #C0392B;
+}
+
+form .botao {
+  margin-top: 1rem;
+}
+
+fieldset {
+  margin: 1rem 0 0;
+  padding: 0.5rem 1rem 0.75rem;
+  border: 2px solid #C0392B;
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-weight: bold;
+}
+
+/* Linha com opção à esquerda e preço à direita */
+.opcao {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-top: 0;
+  padding: 0.3rem 0;
+  font-weight: normal;
+}
+
+
+/* ===== PÁGINA "MONTA A TUA PIZZA" ===== */
+/* Mobile: 1 coluna (opções, pré-visualização, resumo) */
+.monta-grelha {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.monta-previa {
+  padding: 1rem;
+  background-color: #FBE9E7;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.monta-previa img {
+  width: 70%;
+  max-width: 220px;
+  margin: 0 auto 0.5rem;
+}
+
+.monta-previa p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.monta-resumo {
+  padding: 1rem;
+  border: 2px solid #C0392B;
+  border-radius: 8px;
+}
+
+.monta-resumo h2 {
+  font-size: 1.25rem;
+}
+
+.monta-resumo ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.total {
+  margin: 0 0 0.5rem;
+  padding: 0.75rem;
+  background-color: #FBE9E7;
+  border: 2px solid #C0392B;
+  border-radius: 8px;
+  color: #8E2A20;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+
+/* ===== PÁGINA "SOBRE NÓS" ===== */
+.sobre-grelha {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.sobre-imagem {
+  width: 60%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.grelha-valores {
+  grid-template-columns: 1fr;
+}
+
+
+/* ===== PÁGINAS "CONTACTOS" E "ENCOMENDAS" ===== */
+.contactos-grelha,
+.encomenda-grelha {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.coluna {
+  display: grid;
+  gap: 1.5rem;
+  align-content: start;
+}
+
+.caixa {
+  margin-bottom: 0;
+  padding: 1rem;
+  border: 2px solid #C0392B;
+  border-radius: 8px;
+}
+
+.caixa h2 {
+  margin-bottom: 0.75rem;
+}
+
+.caixa .linhas:last-child {
+  margin-bottom: 0;
+}
+
+.linhas {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.linhas li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #dddddd;
+}
+
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  margin-top: 2rem;
+  padding: 1.25rem 0;
+  background-color: #4A1511;
+  color: #ffffff;
+  text-align: center;
+  font-size: 0.85rem;
+}
+
+.rodape p {
+  margin: 0;
+}
+
+
+/* ==========================================================
+   ECRÃS MÉDIOS E GRANDES (a partir de 768px)
+   ========================================================== */
+@media (min-width: 768px) {
+
+  /* Cabeçalho: logótipo à esquerda, menu à direita */
+  .cabecalho-conteudo {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-size: 1rem;
+  }
+
+  .menu ul {
+    gap: 0.25rem 0;
+  }
+
+  .menu a {
+    font-size: 0.85rem;
+    padding: 0.25rem 0.4rem;
+  }
+
+  /* Hero: 2 colunas (texto maior, imagem mais pequena) */
+  .hero-grelha {
+    grid-template-columns: 3fr 2fr;
+    gap: 2rem;
+  }
+
+  .hero-imagem {
+    order: 0;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero-texto {
+    text-align: left;
+  }
+
+  /* Cartões: mais colunas */
+  .grelha-destaques {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .grelha-menu,
+  .grelha-valores {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Destaque "Monta a Tua Pizza": texto à esquerda e botão à direita */
+  .destaque-monta {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  /* Sobre, contactos e encomendas: 2 colunas */
+  .sobre-grelha,
+  .contactos-grelha,
+  .encomenda-grelha {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+
+/* ==========================================================
+   ECRÃS GRANDES (a partir de 900px): menu maior e página "Monta a Tua Pizza"
+   ========================================================== */
+@media (min-width: 900px) {
+
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  .menu ul {
+    gap: 0.25rem 0.5rem;
+  }
+
+  .menu a {
+    font-size: 0.95rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  /* 3 colunas: opções, pré-visualização e resumo */
+  .monta-grelha {
+    grid-template-columns: 2fr 1.3fr 1.2fr;
+    align-items: start;
+  }
+}
+
+/* Estilo para o botão de apagar na encomenda */
+.btn-apagar {
+    background: #C0392B;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-apagar:hover {
+    background: #8E2A20;
+}

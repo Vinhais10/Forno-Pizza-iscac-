@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contactos e formulário de contacto da pizzaria Forno & Pizza.">
+  <title>Contactos — Forno &amp; Pizza</title>
+  <link rel="icon" href="img/logo-icone.webp">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <div class="container cabecalho-conteudo">
+      <a class="logo" href="index.html">
+        <img class="logo-icone" src="img/logo-icone.webp" alt="" width="44" height="44">
+        <span>FORNO &amp; PIZZA</span>
+      </a>
+      <nav class="menu" aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="monta.html">Monta a Tua Pizza</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
+        <li><a href="encomendas.html">Encomendas</a></li>
+        <li><a href="contactos.html" class="ativo" aria-current="page">Contactos</a></li>
+        <li><a class="carrinho" href="encomendas.html" aria-label="Carrinho, 0 artigos"><svg class="icone" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.2a1 1 0 0 0 1-.8L19 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg><span>0</span></a></li>
+      </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container pagina">
+      <h1>Contactos</h1>
+      <div class="contactos-grelha">
+
+        <div class="coluna">
+          <section class="caixa">
+            <h2>Onde estamos</h2>
+            <p><strong>Morada:</strong><br>Rua da Pizza, 12<br>3000-000 Coimbra</p>
+            <p><strong>Telefone:</strong><br>239 000 000</p>
+            <p><strong>Email:</strong><br>info@forno-pizza.pt</p>
+          </section>
+
+          <section class="caixa">
+            <h2>Horário e entregas</h2>
+            <ul class="linhas">
+              <li><span>Todos os dias</span><span>12h00 – 23h00</span></li>
+              <li><span>Entregamos em</span><span>Coimbra e arredores</span></li>
+              <li><span>Tempo médio</span><span>30 a 40 minutos</span></li>
+              <li><span>Encomenda mínima</span><span>€10,00</span></li>
+            </ul>
+          </section>
+        </div>
+
+        <section class="caixa">
+          <h2>Envia-nos uma mensagem</h2>
+          <form action="contactos.html" method="get">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+            <button class="botao" type="submit">Enviar</button>
+          </form>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <p>© 2026 Forno &amp; Pizza · <a href="menu.html">Menu</a> · <a href="contactos.html">Contactos</a></p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
