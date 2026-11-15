@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Cria a tua pizza: escolhe a massa, o tamanho e os ingredientes.">
-  <title>Monta a Tua Pizza â€” Forno &amp; Pizza</title>
+  <title>Monta a Tua Pizza — Forno &amp; Pizza</title>
   <link rel="icon" href="img/logo-icone.webp">
   <link rel="stylesheet" href="css/estilo.css">
-<script src="https://cdn.tailwindcss.com"></script>`n</head>
+</head>
 <body>
 
-  <!-- CABEÃ‡ALHO -->
+  <!-- ===== CABEÇALHO ===== -->
   <header class="cabecalho">
     <div class="container cabecalho-conteudo">
       <a class="logo" href="index.html">
         <img class="logo-icone" src="img/logo-icone.webp" alt="" width="44" height="44">
         <span>FORNO &amp; PIZZA</span>
       </a>
-      <nav class="menu" aria-label="NavegaÃ§Ã£o principal">
+      <nav class="menu" aria-label="Navegação principal">
       <ul>
-        <li><a href="index.html">InÃ­cio</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="menu.html">Menu</a></li>
         <li><a href="monta.html" class="ativo" aria-current="page">Monta a Tua Pizza</a></li>
-        <li><a href="sobre.html">Sobre NÃ³s</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
         <li><a href="encomendas.html">Encomendas</a></li>
         <li><a href="contactos.html">Contactos</a></li>
         <li><a class="carrinho" href="encomendas.html" aria-label="Carrinho, 0 artigos"><svg class="icone" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.2a1 1 0 0 0 1-.8L19 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg><span>0</span></a></li>
@@ -34,49 +34,60 @@
   <main>
     <div class="container pagina">
       <h1>Monta a tua pizza</h1>
-      <p>Escolhe a massa, o tamanho e os ingredientes. O preÃ§o total Ã© a soma de tudo.</p>
+      <p>Escolhe a massa, o tamanho e os ingredientes. O preço total é a soma de tudo.</p>
 
-      <form class="monta" action="encomendas.html" method="get">
+      <form class="monta" id="form-monta">
         <div class="monta-grelha">
 
+          <!-- ===== OPÇÕES ===== -->
           <div class="monta-opcoes">
             <fieldset>
               <legend>1. Massa</legend>
-              <label class="opcao"><span><input type="radio" name="massa" value="fina" checked> Fina</span><span class="preco"></span></label>
-              <label class="opcao"><span><input type="radio" name="massa" value="grossa"> Grossa</span><span class="preco"></span></label>
-              <label class="opcao"><span><input type="radio" name="massa" value="sem-gluten"> Sem glÃºten</span><span class="preco"></span></label>
+            <label class="opcao"><span><input type="radio" name="massa" value="fina" checked> Fina</span><span class="preco"></span></label>
+            <label class="opcao"><span><input type="radio" name="massa" value="grossa"> Grossa</span><span class="preco"></span></label>
+            <label class="opcao"><span><input type="radio" name="massa" value="sem-gluten"> Sem glúten</span><span class="preco"></span></label>
             </fieldset>
             <fieldset>
               <legend>2. Tamanho</legend>
-              <label class="opcao"><span><input type="radio" name="tamanho" value="6.00"> Pequena</span><span class="preco">â‚¬6,00</span></label>
-              <label class="opcao"><span><input type="radio" name="tamanho" value="9.00" checked> MÃ©dia</span><span class="preco">â‚¬9,00</span></label>
-              <label class="opcao"><span><input type="radio" name="tamanho" value="12.00"> Grande</span><span class="preco">â‚¬12,00</span></label>
+            <label class="opcao"><span><input type="radio" name="tamanho" value="6.00" data-largura="65%"> Pequena</span><span class="preco">€6,00</span></label>
+            <label class="opcao"><span><input type="radio" name="tamanho" value="9.00" data-largura="80%" checked> Média</span><span class="preco">€9,00</span></label>
+            <label class="opcao"><span><input type="radio" name="tamanho" value="12.00" data-largura="95%"> Grande</span><span class="preco">€12,00</span></label>
             </fieldset>
             <fieldset>
               <legend>3. Ingredientes</legend>
-              <label class="opcao"><span><input type="checkbox" name="queijo" value="1.00"> Queijo</span><span class="preco">+â‚¬1,00</span></label>
-              <label class="opcao"><span><input type="checkbox" name="pepperoni" value="1.50"> Pepperoni</span><span class="preco">+â‚¬1,50</span></label>
-              <label class="opcao"><span><input type="checkbox" name="cogumelos" value="1.00"> Cogumelos</span><span class="preco">+â‚¬1,00</span></label>
-              <label class="opcao"><span><input type="checkbox" name="azeitonas" value="0.50"> Azeitonas</span><span class="preco">+â‚¬0,50</span></label>
-              <label class="opcao"><span><input type="checkbox" name="cebola" value="0.50"> Cebola</span><span class="preco">+â‚¬0,50</span></label>
-              <label class="opcao"><span><input type="checkbox" name="pimento" value="1.00"> Pimento</span><span class="preco">+â‚¬1,00</span></label>
+            <label class="opcao"><span><input type="checkbox" name="queijo" value="1.00"> Queijo</span><span class="preco">+€1,00</span></label>
+            <label class="opcao"><span><input type="checkbox" name="pepperoni" value="1.50"> Pepperoni</span><span class="preco">+€1,50</span></label>
+            <label class="opcao"><span><input type="checkbox" name="cogumelos" value="1.00"> Cogumelos</span><span class="preco">+€1,00</span></label>
+            <label class="opcao"><span><input type="checkbox" name="azeitonas" value="0.50"> Azeitonas</span><span class="preco">+€0,50</span></label>
+            <label class="opcao"><span><input type="checkbox" name="cebola" value="0.50"> Cebola</span><span class="preco">+€0,50</span></label>
+            <label class="opcao"><span><input type="checkbox" name="pimento" value="1.00"> Pimento</span><span class="preco">+€1,00</span></label>
             </fieldset>
           </div>
 
+          <!-- ===== PRÉ-VISUALIZAÇÃO ===== -->
           <div class="monta-previa">
-            <img src="img/pizza-margherita.svg" alt="PrÃ©-visualizaÃ§Ã£o" width="150" height="150">
-            <p>PrÃ©-visualizaÃ§Ã£o da pizza</p>
+            <div class="pizza-previa" id="pizza-previa">
+              <img src="img/pizza-base.svg" alt="Pizza com os ingredientes escolhidos" width="200" height="200">
+              <img class="camada" id="camada-queijo" src="img/ing-queijo.svg" alt="" width="200" height="200" hidden>
+              <img class="camada" id="camada-pepperoni" src="img/ing-pepperoni.svg" alt="" width="200" height="200" hidden>
+              <img class="camada" id="camada-cogumelos" src="img/ing-cogumelos.svg" alt="" width="200" height="200" hidden>
+              <img class="camada" id="camada-azeitonas" src="img/ing-azeitonas.svg" alt="" width="200" height="200" hidden>
+              <img class="camada" id="camada-cebola" src="img/ing-cebola.svg" alt="" width="200" height="200" hidden>
+              <img class="camada" id="camada-pimento" src="img/ing-pimento.svg" alt="" width="200" height="200" hidden>
+            </div>
+            <p id="legenda-previa">Pré-visualização da pizza</p>
           </div>
 
+          <!-- ===== RESUMO ===== -->
           <aside class="monta-resumo">
             <h2>Resumo do pedido</h2>
             <ul>
-              <li>Massa: Fina</li>
-              <li>Tamanho: MÃ©dia</li>
-              <li>Ingredientes: nenhum</li>
+              <li id="resumo-massa">Massa: Fina</li>
+              <li id="resumo-tamanho">Tamanho: Média</li>
+              <li id="resumo-ingredientes">Ingredientes: nenhum</li>
             </ul>
-            <p class="total">PreÃ§o total: <strong>â‚¬9,00</strong></p>
-            <button class="botao" type="button" id="btn-add-monta">Adicionar ao carrinho</button>
+            <p class="total">Preço total: <strong id="total-monta">€9,00</strong></p>
+            <button class="botao" type="submit" id="btn-add-monta">Adicionar ao carrinho</button>
           </aside>
 
         </div>
@@ -84,13 +95,14 @@
     </div>
   </main>
 
-  <!-- RODAPÃ‰ -->
+  <!-- ===== RODAPÉ ===== -->
   <footer class="rodape">
     <div class="container">
-      <p>Â© 2026 Forno &amp; Pizza Â· <a href="menu.html">Menu</a> Â· <a href="contactos.html">Contactos</a></p>
+      <p>© 2026 Forno &amp; Pizza · <a href="menu.html">Menu</a> · <a href="contactos.html">Contactos</a></p>
     </div>
   </footer>
 
   <script src="js/script.js"></script>
+
 </body>
 </html>

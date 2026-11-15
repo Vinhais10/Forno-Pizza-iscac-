@@ -3,26 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Menu da pizzaria Forno & Pizza.">
-  <title>Menu â€” Forno &amp; Pizza</title>
+  <meta name="description" content="Menu da pizzaria Forno & Pizza: pizzas, bebidas e sobremesas.">
+  <title>Menu — Forno &amp; Pizza</title>
   <link rel="icon" href="img/logo-icone.webp">
   <link rel="stylesheet" href="css/estilo.css">
-<script src="https://cdn.tailwindcss.com"></script>`n</head>
+</head>
 <body>
 
-  <!-- CABEÃ‡ALHO -->
+  <!-- ===== CABEÇALHO ===== -->
   <header class="cabecalho">
     <div class="container cabecalho-conteudo">
       <a class="logo" href="index.html">
         <img class="logo-icone" src="img/logo-icone.webp" alt="" width="44" height="44">
         <span>FORNO &amp; PIZZA</span>
       </a>
-      <nav class="menu" aria-label="NavegaÃ§Ã£o principal">
+      <nav class="menu" aria-label="Navegação principal">
       <ul>
-        <li><a href="index.html">InÃ­cio</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="menu.html" class="ativo" aria-current="page">Menu</a></li>
         <li><a href="monta.html">Monta a Tua Pizza</a></li>
-        <li><a href="sobre.html">Sobre NÃ³s</a></li>
+        <li><a href="sobre.html">Sobre Nós</a></li>
         <li><a href="encomendas.html">Encomendas</a></li>
         <li><a href="contactos.html">Contactos</a></li>
         <li><a class="carrinho" href="encomendas.html" aria-label="Carrinho, 0 artigos"><svg class="icone" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 4h2l2.4 10.2a1 1 0 0 0 1 .8h8.2a1 1 0 0 0 1-.8L19 8H6.2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.5" fill="currentColor"/><circle cx="17" cy="19.5" r="1.5" fill="currentColor"/></svg><span>0</span></a></li>
@@ -35,120 +35,128 @@
     <div class="container pagina">
       <h1>Menu</h1>
 
-      <!-- FILTROS -->
+      <!-- ===== FILTROS POR CATEGORIA ===== -->
       <nav class="filtros" aria-label="Categorias do menu">
         <a class="filtro" href="#pizzas">Pizzas</a>
         <a class="filtro" href="#bebidas">Bebidas</a>
         <a class="filtro" href="#sobremesas">Sobremesas</a>
       </nav>
 
-      <!-- PIZZAS -->
+      <!-- ===== PIZZAS ===== -->
       <section id="pizzas">
         <h2>Pizzas</h2>
         <ul class="grelha-cartoes grelha-menu">
         <li class="cartao" id="margherita">
-          <img src="img/pizza-margherita.svg" alt="Pizza Margherita" width="200" height="200">
+          <img src="img/pizza-margherita.svg" alt="Ilustração da pizza Margherita" width="200" height="200">
           <h3>Pizza Margherita</h3>
-          <p class="descricao">Molho de tomate, mozzarella e manjericÃ£o.</p>
-          <p class="preco">â‚¬8,50</p>
-          <button class="botao" type="button">Adicionar</button>
+          <p class="descricao">Molho de tomate, mozzarella e manjericão.</p>
+          <p class="preco">€8,50</p>
+          <button class="botao" type="button" data-nome="Pizza Margherita" data-preco="8.50">Adicionar</button>
         </li>
         <li class="cartao" id="pepperoni">
-          <img src="img/pizza-pepperoni.svg" alt="Pizza Pepperoni" width="200" height="200">
+          <img src="img/pizza-pepperoni.svg" alt="Ilustração da pizza Pepperoni" width="200" height="200">
           <h3>Pizza Pepperoni</h3>
           <p class="descricao">Molho de tomate, mozzarella e pepperoni.</p>
-          <p class="preco">â‚¬9,50</p>
-          <button class="botao" type="button">Adicionar</button>
+          <p class="preco">€9,50</p>
+          <button class="botao" type="button" data-nome="Pizza Pepperoni" data-preco="9.50">Adicionar</button>
         </li>
         <li class="cartao" id="quatro-queijos">
-          <img src="img/pizza-quatro-queijos.svg" alt="Pizza 4 Queijos" width="200" height="200">
+          <img src="img/pizza-quatro-queijos.svg" alt="Ilustração da pizza 4 Queijos" width="200" height="200">
           <h3>Pizza 4 Queijos</h3>
-          <p class="descricao">Mozzarella, gorgonzola, parmesÃ£o e queijo de cabra.</p>
-          <p class="preco">â‚¬10,00</p>
-          <button class="botao" type="button">Adicionar</button>
+          <p class="descricao">Mozzarella, gorgonzola, parmesão e queijo de cabra.</p>
+          <p class="preco">€10,00</p>
+          <button class="botao" type="button" data-nome="Pizza 4 Queijos" data-preco="10.00">Adicionar</button>
         </li>
         <li class="cartao" id="vegetariana">
-          <img src="img/pizza-vegetariana.svg" alt="Pizza Vegetariana" width="200" height="200">
+          <img src="img/pizza-vegetariana.svg" alt="Ilustração da pizza Vegetariana" width="200" height="200">
           <h3>Pizza Vegetariana</h3>
           <p class="descricao">Pimento, cogumelos, azeitonas e cebola.</p>
-          <p class="preco">â‚¬9,00</p>
-          <button class="botao" type="button">Adicionar</button>
+          <p class="preco">€9,00</p>
+          <button class="botao" type="button" data-nome="Pizza Vegetariana" data-preco="9.00">Adicionar</button>
+        </li>
+        <li class="cartao" id="portuguesa">
+          <img src="img/pizza-portuguesa.svg" alt="Ilustração da pizza Portuguesa" width="200" height="200">
+          <h3>Pizza Portuguesa</h3>
+          <p class="descricao">Fiambre, ovo, azeitonas e cebola.</p>
+          <p class="preco">€9,50</p>
+          <button class="botao" type="button" data-nome="Pizza Portuguesa" data-preco="9.50">Adicionar</button>
+        </li>
+        <li class="cartao" id="calabresa">
+          <img src="img/pizza-calabresa.svg" alt="Ilustração da pizza Calabresa" width="200" height="200">
+          <h3>Pizza Calabresa</h3>
+          <p class="descricao">Chouriço picante, cebola e mozzarella.</p>
+          <p class="preco">€9,00</p>
+          <button class="botao" type="button" data-nome="Pizza Calabresa" data-preco="9.00">Adicionar</button>
         </li>
         </ul>
       </section>
 
-      <!-- BEBIDAS -->
+      <!-- ===== BEBIDAS ===== -->
       <section id="bebidas">
         <h2>Bebidas</h2>
         <ul class="grelha-cartoes grelha-menu">
         <li class="cartao">
-          <div style="font-size: 4rem; text-align: center; margin: 1rem 0;">ðŸ’§</div>
-          <h3>Ãgua</h3>
+          <h3>Água</h3>
           <p class="descricao">Garrafa de 50 cl.</p>
-          <p class="preco">â‚¬1,00</p>
-          <button class="botao" type="button">Adicionar</button>
+          <p class="preco">€1,00</p>
+          <button class="botao" type="button" data-nome="Água" data-preco="1.00">Adicionar</button>
         </li>
         <li class="cartao">
-          <div style="font-size: 4rem; text-align: center; margin: 1rem 0;">ðŸ¥¤</div>
           <h3>Refrigerante</h3>
           <p class="descricao">Lata de 33 cl.</p>
-          <p class="preco">â‚¬1,80</p>
-          <button class="botao" type="button">Adicionar</button>
+          <p class="preco">€1,80</p>
+          <button class="botao" type="button" data-nome="Refrigerante" data-preco="1.80">Adicionar</button>
         </li>
         <li class="cartao">
-          <div style="font-size: 4rem; text-align: center; margin: 1rem 0;">ðŸŠ</div>
           <h3>Sumo natural</h3>
           <p class="descricao">Laranja espremida.</p>
-          <p class="preco">â‚¬2,50</p>
-          <button class="botao" type="button">Adicionar</button>
+          <p class="preco">€2,50</p>
+          <button class="botao" type="button" data-nome="Sumo natural" data-preco="2.50">Adicionar</button>
         </li>
         <li class="cartao">
-          <div style="font-size: 4rem; text-align: center; margin: 1rem 0;">ðŸº</div>
           <h3>Cerveja</h3>
           <p class="descricao">Garrafa de 33 cl.</p>
-          <p class="preco">â‚¬2,00</p>
-          <button class="botao" type="button">Adicionar</button>
+          <p class="preco">€2,00</p>
+          <button class="botao" type="button" data-nome="Cerveja" data-preco="2.00">Adicionar</button>
         </li>
         </ul>
       </section>
 
-      <!-- SOBREMESAS -->
+      <!-- ===== SOBREMESAS ===== -->
       <section id="sobremesas">
         <h2>Sobremesas</h2>
         <ul class="grelha-cartoes grelha-menu">
         <li class="cartao">
-          <div style="font-size: 4rem; text-align: center; margin: 1rem 0;">ðŸ°</div>
-          <h3>TiramisÃ¹</h3>
-          <p class="descricao">Receita italiana clÃ¡ssica.</p>
-          <p class="preco">â‚¬3,50</p>
-          <button class="botao" type="button">Adicionar</button>
+          <h3>Tiramisù</h3>
+          <p class="descricao">Receita italiana clássica.</p>
+          <p class="preco">€3,50</p>
+          <button class="botao" type="button" data-nome="Tiramisù" data-preco="3.50">Adicionar</button>
         </li>
         <li class="cartao">
-          <div style="font-size: 4rem; text-align: center; margin: 1rem 0;">ðŸ®</div>
           <h3>Panna cotta</h3>
           <p class="descricao">Com doce de frutos vermelhos.</p>
-          <p class="preco">â‚¬3,00</p>
-          <button class="botao" type="button">Adicionar</button>
+          <p class="preco">€3,00</p>
+          <button class="botao" type="button" data-nome="Panna cotta" data-preco="3.00">Adicionar</button>
         </li>
         <li class="cartao">
-          <div style="font-size: 4rem; text-align: center; margin: 1rem 0;">ðŸ¨</div>
           <h3>Gelado</h3>
-          <p class="descricao">Duas bolas Ã  escolha.</p>
-          <p class="preco">â‚¬2,50</p>
-          <button class="botao" type="button">Adicionar</button>
+          <p class="descricao">Duas bolas à escolha.</p>
+          <p class="preco">€2,50</p>
+          <button class="botao" type="button" data-nome="Gelado" data-preco="2.50">Adicionar</button>
         </li>
         </ul>
       </section>
     </div>
   </main>
 
-  <!-- RODAPÃ‰ -->
+  <!-- ===== RODAPÉ ===== -->
   <footer class="rodape">
     <div class="container">
-      <p>Â© 2026 Forno &amp; Pizza Â· <a href="menu.html">Menu</a> Â· <a href="contactos.html">Contactos</a></p>
+      <p>© 2026 Forno &amp; Pizza · <a href="menu.html">Menu</a> · <a href="contactos.html">Contactos</a></p>
     </div>
   </footer>
 
   <script src="js/script.js"></script>
+
 </body>
 </html>
