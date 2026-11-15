@@ -378,7 +378,7 @@ legend {
 .pizza-previa {
   display: grid;
   width: 80%;
-  max-width: 240px;
+  max-width: 300px;
   margin: 0 auto 0.5rem;
   transition: width 0.3s;
 }
