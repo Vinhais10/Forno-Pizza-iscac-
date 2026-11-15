@@ -1,23 +1,13 @@
-/* ==========================================================
-   FORNO & PIZZA — script.js
-   - Carrinho de compras (guardado no localStorage)
-   - Página "Monta a Tua Pizza": cálculo do preço e pré-visualização
-   - Página "Encomendas": lista do carrinho, apagar e checkout
-   - Página "Contactos": mensagem de envio
-   ========================================================== */
-
+/* FORNO & PIZZA: JavaScript */
 
 /* ===== CARRINHO: FUNÇÕES BASE ===== */
 
-// Nome com que o carrinho fica guardado no browser
 const CHAVE = "fornoCarrinho";
 
-// Lê o carrinho guardado (se não existir, devolve uma lista vazia)
 function lerCarrinho() {
   return JSON.parse(localStorage.getItem(CHAVE)) || [];
 }
 
-// Guarda o carrinho e atualiza o número no cabeçalho
 function guardarCarrinho(carrinho) {
   localStorage.setItem(CHAVE, JSON.stringify(carrinho));
   atualizarContador();
@@ -28,7 +18,6 @@ function formatarPreco(valor) {
   return "€" + valor.toFixed(2).replace(".", ",");
 }
 
-// Mostra no cabeçalho o total de artigos do carrinho
 function atualizarContador() {
   const carrinho = lerCarrinho();
   let total = 0;
@@ -39,7 +28,6 @@ function atualizarContador() {
   document.querySelector(".carrinho").setAttribute("aria-label", "Carrinho, " + total + " artigos");
 }
 
-// Junta um artigo ao carrinho (se já existir, aumenta a quantidade)
 function adicionarAoCarrinho(nome, preco) {
   const carrinho = lerCarrinho();
   let encontrado = false;
@@ -58,7 +46,6 @@ function adicionarAoCarrinho(nome, preco) {
   guardarCarrinho(carrinho);
 }
 
-// Muda o texto de um botão durante 1,2 segundos (feedback ao utilizador)
 function avisarNoBotao(botao, texto) {
   const original = botao.textContent;
   botao.textContent = texto;
@@ -67,9 +54,7 @@ function avisarNoBotao(botao, texto) {
   }, 1200);
 }
 
-// Em todas as páginas: mostra o número certo no cabeçalho
 atualizarContador();
-
 
 /* ===== PÁGINA MENU: BOTÕES "ADICIONAR" ===== */
 
@@ -82,23 +67,19 @@ for (let i = 0; i < botoesAdicionar.length; i++) {
   });
 }
 
-
 /* ===== PÁGINA MONTA A TUA PIZZA ===== */
 
-// Lê as escolhas, calcula o preço e atualiza o resumo e a pizza
 function calcular() {
   const massa = document.querySelector('input[name="massa"]:checked');
   const tamanho = document.querySelector('input[name="tamanho"]:checked');
   const ingredientes = document.querySelectorAll('input[type="checkbox"]');
 
-  // Preço total = preço do tamanho + preço de cada ingrediente escolhido
   let total = parseFloat(tamanho.value);
   const escolhidos = [];
 
   for (let i = 0; i < ingredientes.length; i++) {
     const camada = document.getElementById("camada-" + ingredientes[i].name);
 
-    // Mostra ou esconde o ingrediente na pizza
     camada.hidden = !ingredientes[i].checked;
 
     if (ingredientes[i].checked) {
@@ -117,8 +98,8 @@ function calcular() {
   document.getElementById("resumo-ingredientes").textContent = "Ingredientes: " + textoIngredientes;
   document.getElementById("total-monta").textContent = formatarPreco(total);
 
-  // Pré-visualização: a pizza muda de tamanho e legenda
   document.getElementById("pizza-previa").style.width = tamanho.dataset.largura;
+  document.getElementById("base-grossa").style.opacity = massa.value === "grossa" ? "1" : "0";
   document.getElementById("legenda-previa").textContent = nomeMassa + " · " + nomeTamanho;
 
   return { massa: nomeMassa, tamanho: nomeTamanho, ingredientes: textoIngredientes, total: total };
@@ -128,7 +109,6 @@ const formMonta = document.getElementById("form-monta");
 
 if (formMonta) {
 
-  // Sempre que o utilizador muda uma opção, recalcula
   formMonta.addEventListener("change", calcular);
   calcular();
 
@@ -141,7 +121,6 @@ if (formMonta) {
     avisarNoBotao(document.getElementById("btn-add-monta"), "Adicionada");
   });
 }
-
 
 /* ===== PÁGINA ENCOMENDAS ===== */
 
@@ -169,7 +148,6 @@ function mostrarCarrinho() {
     preco.className = "preco";
     preco.textContent = formatarPreco(subtotal) + " ";
 
-    // Botão para apagar este artigo (guarda a posição na lista)
     const apagar = document.createElement("button");
     apagar.className = "btn-apagar";
     apagar.type = "button";
@@ -198,7 +176,6 @@ if (listaCarrinho) {
 
   mostrarCarrinho();
 
-  // Checkout simulado: janela a rodar durante 3 segundos e depois confirmação
   const formEncomenda = document.getElementById("form-encomenda");
 
   formEncomenda.addEventListener("submit", function (evento) {
@@ -224,7 +201,6 @@ if (listaCarrinho) {
     }, 3000);
   });
 }
-
 
 /* ===== PÁGINA CONTACTOS ===== */
 
