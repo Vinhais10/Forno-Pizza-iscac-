@@ -116,14 +116,6 @@ section {
   font-size: 1.15rem;
 }
 
-.logo-icone {
-  width: 44px;
-  height: 44px;
-  padding: 3px;
-  border-radius: 50%;
-  background-color: #ffffff;
-  object-fit: contain;
-}
 
 .menu ul {
   display: flex;
@@ -168,12 +160,6 @@ section {
   padding-bottom: 2rem;
 }
 
-.hero-imagem {
-  order: -1;
-  width: 70%;
-  max-width: 260px;
-  margin: 0 auto;
-}
 
 .hero-texto {
   text-align: center;
@@ -205,11 +191,6 @@ section {
   border-radius: 8px;
 }
 
-.cartao img {
-  width: 100%;
-  max-width: 130px;
-  margin: 0 auto;
-}
 
 .cartao h3 {
   margin-bottom: 0;
@@ -421,11 +402,6 @@ legend {
   gap: 1.5rem;
 }
 
-.sobre-imagem {
-  width: 60%;
-  max-width: 240px;
-  margin: 0 auto;
-}
 
 .grelha-valores {
   grid-template-columns: 1fr;
@@ -517,11 +493,6 @@ legend {
     gap: 2rem;
   }
 
-  .hero-imagem {
-    order: 0;
-    width: 100%;
-    max-width: 320px;
-  }
 
   .hero-texto {
     text-align: left;
@@ -668,7 +639,20 @@ legend {
   }
 }
 
-/* ===== IMAGENS DOS PRODUTOS: MESMA MOLDURA ===== */
+/* ===== LOGOTIPO ===== */
+.logo-completo {
+  height: 60px;
+  width: auto;
+}
+
+.sobre-logo {
+  width: 70%;
+  max-width: 360px;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* ===== IMAGENS DOS PRODUTOS ===== */
 .cartao img {
   width: 100%;
   max-width: 160px;
@@ -678,13 +662,12 @@ legend {
   margin: 0 auto;
 }
 
-/* ===== SIMBOLO NO INICIO ===== */
+/* ===== IMAGEM DE DESTAQUE (INICIO) ===== */
 .hero-imagem {
   width: 70%;
   max-width: 260px;
   aspect-ratio: 1 / 1;
   object-fit: contain;
-  background: none;
   margin: 0 auto;
 }
 
