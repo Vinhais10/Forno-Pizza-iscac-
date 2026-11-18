@@ -667,3 +667,30 @@ legend {
     transform: rotate(360deg);
   }
 }
+
+/* ===== IMAGENS DOS PRODUTOS: MESMA MOLDURA ===== */
+.cartao img {
+  width: 100%;
+  max-width: 160px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background-color: #ffffff;
+  margin: 0 auto;
+}
+
+/* ===== SIMBOLO NO INICIO ===== */
+.hero-imagem {
+  width: 70%;
+  max-width: 260px;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  background: none;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .hero-imagem {
+    width: 100%;
+    max-width: 300px;
+  }
+}
